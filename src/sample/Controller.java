@@ -38,13 +38,13 @@ public class Controller {
     @FXML
     private Button gatherBtn;
     @FXML
-    private Label welcome;
+    private Label welcomeLabel;
     //end private declarations
 
     //public methods
     public void onGatherClicked(){
         System.out.println("Gather mode activated");
     }
-    public void onSpeakPressed() {System.out.println("Speaking");}
+    public void onSpeakClicked() {System.out.println("Speaking");}
     //end public methods
 }
