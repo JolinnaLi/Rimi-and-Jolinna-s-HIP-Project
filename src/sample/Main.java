@@ -22,7 +22,7 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
             Scene splashScene = new Scene(loader.load());
             primaryStage.setScene(splashScene);
-            primaryStage.setTitle("NAME OF PROJECT GOES HERE");
+            primaryStage.setTitle("Teacher Mode");
             primaryStage.setResizable(false); //NOTE: You probably want to leave this as false but will need to specify proper window size for your project.
             primaryStage.show();
 
