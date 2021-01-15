@@ -41,20 +41,34 @@ public class Controller{
     private Button gatherBtn;
     @FXML
     private Label welcomeLabel;
+
+    static Stage prevStage; //maintains which stage is being used.
     //end private declarations
 
-    public void handleButtonAction() {ActionEvent event;
+    public static void setPrevStage(Stage stage)
+    {
+        prevStage = stage;
+    }
+
+    public void handleButtonAction()
+    {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("secondWindow.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherGatherMode.fxml"));
+            Parent gatherMode = (Parent) loader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
+            stage.setScene(new Scene(gatherMode));
+            prevStage.close(); //close the previous stage
+            setPrevStage(stage); //set current stage to previous
             stage.show();
         } catch(Exception e) {
             System.out.println("Can't load new window");
+            e.printStackTrace();
         }
     }
 
-    public void onSpeakClicked() {System.out.println("Speaking");}
+    public void onSpeakClicked()
+    {
+        System.out.println("Speaking");
+    }
     //end public methods
 }
