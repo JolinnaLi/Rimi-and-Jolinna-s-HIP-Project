@@ -6,7 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import javax.swing.text.html.ImageView;
 
 public class Controller{
 
@@ -18,7 +21,10 @@ public class Controller{
     @FXML
     private Label welcomeLabel;
     @FXML
-    private Button walkaroundBtn;
+    private Button walkAroundBtn;
+    @FXML
+    private Pane webPanel;
+
 
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
@@ -43,13 +49,13 @@ public class Controller{
             e.printStackTrace();
         }
     }
-    public void onWalkaroundClicked()
+    public void onWalkAroundClicked()
     {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkaroundMode.fxml"));
-            Parent walkaroundMode = (Parent) loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
+            Parent walkAroundMode = (Parent) loader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(walkaroundMode));
+            stage.setScene(new Scene(walkAroundMode));
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
@@ -62,5 +68,6 @@ public class Controller{
     {
         System.out.println("Speaking");
     }
+
     //end public methods
 }

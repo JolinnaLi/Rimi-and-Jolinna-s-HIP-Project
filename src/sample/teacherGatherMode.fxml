@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.Controller"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #8F8F8F; -fx-border-color: #8F8F8F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <Label layoutY="14.0" text="Gather Mode" />
-        <Button fx:id="walkaroundBtn" layoutX="609.0" layoutY="510.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onWalkaroundClicked" prefHeight="50.0" prefWidth="253.0" style="-fx-background-color: #68a2f4;" text="Walk Around mode" textFill="WHITE" AnchorPane.leftAnchor="609.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="510.0" />
+        <Label layoutX="39.0" layoutY="14.0" prefWidth="145.0" text="Gather Mode">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+        <Button fx:id="walkAroundBtn" layoutX="622.0" layoutY="511.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onWalkAroundClicked" prefHeight="50.0" prefWidth="253.0" style="-fx-background-color: #68a2f4;" text="Walk Around mode" textFill="WHITE" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="511.0" />
     </children>
 
 </AnchorPane>
