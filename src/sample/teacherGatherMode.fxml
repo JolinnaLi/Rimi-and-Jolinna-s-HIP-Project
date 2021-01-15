@@ -12,6 +12,7 @@
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <Label layoutY="14.0" text="Gather Mode" />
+        <Button fx:id="walkaroundBtn" layoutX="609.0" layoutY="510.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onWalkaroundClicked" prefHeight="50.0" prefWidth="253.0" style="-fx-background-color: #68a2f4;" text="Walk Around mode" textFill="WHITE" AnchorPane.leftAnchor="609.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="510.0" />
     </children>
 
 </AnchorPane>

@@ -19,7 +19,7 @@ public class Main extends Application {
         try
         {
             //load main screen
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkaroundMode.fxml"));
             Scene walkaroundMode = new Scene(loader.load());
             primaryStage.setScene(walkaroundMode);
             primaryStage.setTitle("Teacher Mode");
