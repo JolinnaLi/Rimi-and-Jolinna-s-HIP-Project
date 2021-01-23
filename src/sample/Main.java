@@ -19,9 +19,9 @@ public class Main extends Application {
         try
         {
             //load main screen
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkaroundMode.fxml"));
-            Scene walkaroundMode = new Scene(loader.load());
-            primaryStage.setScene(walkaroundMode);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
+            Scene walkAroundMode = new Scene(loader.load());
+            primaryStage.setScene(walkAroundMode);
             primaryStage.setTitle("Teacher Mode");
             primaryStage.setResizable(false); //NOTE: You probably want to leave this as false but will need to specify proper window size for your project.
             Controller.setPrevStage(primaryStage);
