@@ -25,6 +25,8 @@ public class Controller{
     @FXML
     private Pane webPanel;
 
+    //TODO:  Add declaration of moveUpButton and imagePanel here.
+
 
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
@@ -67,6 +69,25 @@ public class Controller{
     public void onSpeakClicked()
     {
         System.out.println("Speaking");
+    }
+
+    public void onMoveUpClicked()
+    {
+        //TODO:  Follow the steps here by inserting the logic at each line.
+        // This may be hard to follow, so reach out with questions.  I have notes
+        // through out, but any line that should be replaced with corresponding
+        // code starts with "logic:".
+
+        //move image up by 5 or 10 pixels  (you can change the number based on preference)
+        //logic: double variable = get current Y location of the image panel
+        //logic: add 5 to 'variable'
+        //logic: if 'variable' >= 5
+        //{
+             //then set imagePanel Y value to 'variable'
+        //}
+
+        //note if the image is at the top of the screen, do nothing
+        //in order to move the image, look into how to use .setLayoutY() and .getLayoutY()
     }
 
     //end public methods
