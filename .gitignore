@@ -1,4 +1,6 @@
 # Ignore out folder
+out/*
+out\*
 out
 
 # Ignore idea file
