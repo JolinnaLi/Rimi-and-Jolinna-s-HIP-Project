@@ -34,7 +34,12 @@ public class Controller{
     private Button moveRightButton;
     @FXML
     private Button moveLeftButton;
-
+    @FXML
+    private Pane stationaryImagePanel;
+    @FXML
+    private Label rimiLabel;
+    @FXML
+    private Label teacherLabel;
 
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
@@ -81,13 +86,44 @@ public class Controller{
 
     public void onMoveUpClicked() {
         double variable = imagePanel.getLayoutY();
-        variable = variable - 5;
+        variable = variable - 10;
         if (variable >= 28)
         {
             imagePanel.setLayoutY(variable);
         }
         System.out.println("Y: " + imagePanel.getLayoutY());
     }
+
+    public void onMoveDownClicked() {
+        double variable = imagePanel.getLayoutY();
+        variable = variable + 10;
+        if (variable <= 403)
+        {
+            imagePanel.setLayoutY(variable);
+        }
+        System.out.println("Y: " + imagePanel.getLayoutY());
+    }
+
+    public void onMoveRightClicked() {
+        double variable = imagePanel.getLayoutX();
+        variable = variable + 10;
+        if (variable >= 210) ;
+        {
+            imagePanel.setLayoutX(variable);
+        }
+        System.out.println("X: " + imagePanel.getLayoutX());
+    }
+
+    public void onMoveLeftClicked() {
+        double variable = imagePanel.getLayoutX();
+        variable = variable - 10;
+        if (variable >= 5)
+        {
+            imagePanel.setLayoutX(variable);
+        }
+        System.out.println("X: " + imagePanel.getLayoutX());
+    }
+
 
     //end public methods
 }
