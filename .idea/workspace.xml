@@ -22,7 +22,7 @@
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Rimi-and-Jolinna-s-HIP-Project/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Rimi-and-Jolinna-s-HIP-Project/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Rimi-and-Jolinna-s-HIP-Project/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Rimi-and-Jolinna-s-HIP-Project/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/teacherWalkaroundMode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/teacherWalkaroundMode.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,52 +222,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="456" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1610548006290">
-      <screen x="0" y="0" width="2048" height="1152" />
-    </state>
-    <state x="456" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2048.1152@0.0.2048.1152" timestamp="1610548006290" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1610722899214">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1610722899214" />
-    <state width="1237" height="9" key="GridCell.Tab.0.bottom" timestamp="1610724274206">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="9" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1610724274206" />
-    <state width="1938" height="177" key="GridCell.Tab.0.bottom/0.23.2048.1078@0.23.2048.1078" timestamp="1609254435963" />
-    <state width="1938" height="268" key="GridCell.Tab.0.bottom/0.23.2048.1079@0.23.2048.1079" timestamp="1608995131794" />
-    <state width="1921" height="220" key="GridCell.Tab.0.bottom/0.23.2048.1080@0.23.2048.1080" timestamp="1608656518610" />
-    <state width="1237" height="9" key="GridCell.Tab.0.center" timestamp="1610724274205">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="9" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1610724274205" />
-    <state width="1938" height="177" key="GridCell.Tab.0.center/0.23.2048.1078@0.23.2048.1078" timestamp="1609254435963" />
-    <state width="1938" height="268" key="GridCell.Tab.0.center/0.23.2048.1079@0.23.2048.1079" timestamp="1608995131794" />
-    <state width="1921" height="220" key="GridCell.Tab.0.center/0.23.2048.1080@0.23.2048.1080" timestamp="1608656518610" />
-    <state width="1237" height="9" key="GridCell.Tab.0.left" timestamp="1610724274201">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="9" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1610724274201" />
-    <state width="1938" height="177" key="GridCell.Tab.0.left/0.23.2048.1078@0.23.2048.1078" timestamp="1609254435962" />
-    <state width="1938" height="268" key="GridCell.Tab.0.left/0.23.2048.1079@0.23.2048.1079" timestamp="1608995131793" />
-    <state width="1921" height="220" key="GridCell.Tab.0.left/0.23.2048.1080@0.23.2048.1080" timestamp="1608656518610" />
-    <state width="1237" height="9" key="GridCell.Tab.0.right" timestamp="1610724274206">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="9" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1610724274206" />
-    <state width="1938" height="177" key="GridCell.Tab.0.right/0.23.2048.1078@0.23.2048.1078" timestamp="1609254435963" />
-    <state width="1938" height="268" key="GridCell.Tab.0.right/0.23.2048.1079@0.23.2048.1079" timestamp="1608995131794" />
-    <state width="1921" height="220" key="GridCell.Tab.0.right/0.23.2048.1080@0.23.2048.1080" timestamp="1608656518610" />
-    <state x="600" y="290" key="IDE.errors.dialog" timestamp="1609254382739">
-      <screen x="0" y="23" width="2048" height="1078" />
-    </state>
-    <state x="600" y="290" key="IDE.errors.dialog/0.23.2048.1078@0.23.2048.1078" timestamp="1609254382739" />
-    <state x="666" y="250" key="RollbackChangesDialog" timestamp="1608994754712">
-      <screen x="0" y="23" width="2048" height="1080" />
-    </state>
-    <state x="666" y="250" key="RollbackChangesDialog/0.23.2048.1080@0.23.2048.1080" timestamp="1608994754712" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

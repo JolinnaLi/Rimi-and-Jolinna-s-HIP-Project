@@ -24,6 +24,16 @@ public class Controller{
     private Button walkAroundBtn;
     @FXML
     private Pane webPanel;
+    @FXML
+    private Pane imagePanel;
+    @FXML
+    private Button moveUpButton;
+    @FXML
+    private Button moveDownButton;
+    @FXML
+    private Button moveRightButton;
+    @FXML
+    private Button moveLeftButton;
 
 
     static Stage prevStage; //maintains which stage is being used.
@@ -67,6 +77,15 @@ public class Controller{
     public void onSpeakClicked()
     {
         System.out.println("Speaking");
+    }
+
+    public void onMoveUpClicked() {
+        double variable = imagePanel.getLayoutY();
+        variable = variable - 5;
+        if (variable >= 5) ;
+        {
+            imagePanel.setLayoutY(variable);
+        }
     }
 
     //end public methods

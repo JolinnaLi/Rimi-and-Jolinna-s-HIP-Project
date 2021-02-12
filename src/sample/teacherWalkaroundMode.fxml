@@ -2,16 +2,23 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #8F8F8F; -fx-border-color: #8F8F8F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-
+        <Button fx:id="moveUpButton" layoutX="103.0" layoutY="499.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveUpClicked" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: WHITE;" text="Up" textFill="#1b1616" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="499.0" />
+        <Pane fx:id="imagePanel" layoutX="95.0" layoutY="353.0" prefHeight="75.0" prefWidth="98.0">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="109.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/th.jpg" />
+               </image>
+            </ImageView>
+         </children></Pane>
         <Button fx:id="gatherBtn" layoutX="755.0" layoutY="544.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: #68a2f4;" text="Gather mode" textFill="WHITE" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="544.0" />
-
         <Button fx:id="speakBtn" layoutX="615.0" layoutY="545.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onSpeakClicked" prefHeight="37.0" prefWidth="132.0" style="-fx-background-color: RED;" text="Hold to Speak" textFill="WHITE" AnchorPane.leftAnchor="614.0" AnchorPane.rightAnchor="154.0" AnchorPane.topAnchor="544.0" />
-
         <Label fx:id="welcomeLabel" layoutX="6.0" prefHeight="37.0" prefWidth="249.0" text="Welcome to Walk and Talk" textFill="BLACK"> <font> <Font size="19.0" /> </font></Label>
       <GridPane gridLinesVisible="true" layoutX="614.0" layoutY="176.0" prefHeight="360.0" prefWidth="282.0" style="-fx-background-color: Lavender;">
         <columnConstraints>
