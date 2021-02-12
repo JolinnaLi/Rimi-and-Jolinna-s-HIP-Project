@@ -82,10 +82,11 @@ public class Controller{
     public void onMoveUpClicked() {
         double variable = imagePanel.getLayoutY();
         variable = variable - 5;
-        if (variable >= 5) ;
+        if (variable >= 28)
         {
             imagePanel.setLayoutY(variable);
         }
+        System.out.println("Y: " + imagePanel.getLayoutY());
     }
 
     //end public methods

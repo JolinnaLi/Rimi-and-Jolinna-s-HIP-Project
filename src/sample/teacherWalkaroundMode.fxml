@@ -11,9 +11,9 @@
         <Button fx:id="moveUpButton" layoutX="103.0" layoutY="499.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveUpClicked" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: WHITE;" text="Up" textFill="#1b1616" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="499.0" />
         <Pane fx:id="imagePanel" layoutX="95.0" layoutY="353.0" prefHeight="75.0" prefWidth="98.0">
          <children>
-            <ImageView fitHeight="78.0" fitWidth="109.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/th.jpg" />
+                  <Image url="@th.jpg" />
                </image>
             </ImageView>
          </children></Pane>
