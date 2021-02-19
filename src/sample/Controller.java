@@ -91,7 +91,6 @@ public class Controller{
         {
             imagePanel.setLayoutY(variable);
         }
-        System.out.println("Y: " + imagePanel.getLayoutY());
     }
 
     public void onMoveDownClicked() {
@@ -101,7 +100,6 @@ public class Controller{
         {
             imagePanel.setLayoutY(variable);
         }
-        System.out.println("Y: " + imagePanel.getLayoutY());
     }
 
     public void onMoveRightClicked() {
@@ -111,7 +109,6 @@ public class Controller{
         {
             imagePanel.setLayoutX(variable);
         }
-        System.out.println("X: " + imagePanel.getLayoutX());
     }
 
     public void onMoveLeftClicked() {
@@ -121,7 +118,6 @@ public class Controller{
         {
             imagePanel.setLayoutX(variable);
         }
-        System.out.println("X: " + imagePanel.getLayoutX());
     }
 
 
