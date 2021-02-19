@@ -12,21 +12,21 @@
         <Button fx:id="moveDownButton" layoutX="103.0" layoutY="545.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveDownClicked" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: WHITE;" text="Down" textFill="#1b1616" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="545.0" />
         <Button fx:id="moveRightButton" layoutX="235.0" layoutY="523.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveRightClicked" prefHeight="50.0" prefWidth="63.0" style="-fx-background-color: WHITE;" text="Right" textFill="#1b1616" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="606.0" AnchorPane.topAnchor="523.0" />
         <Button fx:id="moveLeftButton" layoutX="38.0" layoutY="524.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveLeftClicked" prefHeight="50.0" prefWidth="61.0" style="-fx-background-color: WHITE;" text="Left" textFill="#1b1616" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="807.0" AnchorPane.topAnchor="524.0" />
-        <Pane fx:id="imagePanel" layoutX="95.0" layoutY="353.0" prefHeight="75.0" prefWidth="98.0">
+        <Pane fx:id="imagePanel" layoutX="115.0" layoutY="401.0" prefHeight="71.0" prefWidth="53.0">
             <children>
-                <ImageView fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                <Label fx:id="teacherLabel" layoutX="1.0" prefHeight="18.0" prefWidth="53.0" text="Teacher" textFill="BLACK" />
+                <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="2.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@th.jpg" />
                     </image>
                 </ImageView>
             </children></Pane>
-        <Pane fx:id="stationaryImagePanel" layoutX="23.0" layoutY="244.0" prefHeight="98.0" prefWidth="108.0">
+        <Pane fx:id="stationaryImagePanel" layoutX="123.0" layoutY="186.0" prefHeight="50.0" prefWidth="50.0">
             <children>
-                <Label fx:id="rimiLabel" layoutX="29.0" layoutY="-4.0" prefHeight="37.0" prefWidth="50.0" text="RIMI" textFill="BLACK"> <font> <Font size="19.0" /> </font>
-                </Label>
-                <ImageView fitHeight="75.0" fitWidth="98.0" layoutX="5.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                <Label fx:id="studentLabel" prefHeight="18.0" prefWidth="50.0" text="Student" textFill="BLACK" />
+                <ImageView fitHeight="37.0" fitWidth="50.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@th.jpg" />
+                        <Image url="@cat.jpg" />
                     </image>
                 </ImageView>
             </children></Pane>
@@ -109,7 +109,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jolinna" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1">
                     <font>
                         <Font name="Arial" size="22.0" />
                     </font>
