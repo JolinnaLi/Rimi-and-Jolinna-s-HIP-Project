@@ -48,7 +48,7 @@ public class Controller{
     }
 
     public void handleButtonAction()
-    { System.out.println("it works");
+    {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherGatherMode.fxml"));
             Parent gatherMode = (Parent) loader.load();
@@ -83,7 +83,6 @@ public class Controller{
     }
     public void onUploadImageClicked()
     {
-        System.out.println("Image Upload");
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "JPG & GIF Images", "jpg", "gif");
@@ -101,13 +100,7 @@ public class Controller{
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
-            //Setting the image view
-
-
         }
-
     }
-
     //end public methods
 }
