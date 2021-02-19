@@ -8,8 +8,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import java.io.FileInputStream;
 
-import javax.swing.text.html.ImageView;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import javax.swing.text.Element;
+
 
 public class Controller{
 
@@ -24,6 +33,10 @@ public class Controller{
     private Button walkAroundBtn;
     @FXML
     private Pane webPanel;
+    @FXML
+    private Button uploadImageBtn;
+    @FXML
+    private ImageView teacherImageView;
     @FXML
     private Pane imagePanel;
     @FXML
@@ -88,6 +101,26 @@ public class Controller{
         }
         System.out.println("Y: " + imagePanel.getLayoutY());
     }
+    public void onUploadImageClicked()
+    {
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "JPG & GIF Images", "jpg", "gif");
+        chooser.setFileFilter(filter);
+        int returnVal = chooser.showOpenDialog(null);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            System.out.println("You chose to open this file: " +
+                    chooser.getSelectedFile().getName());
+            //Creating an image
+            Image image = null;
+            try {
+                image = new Image(new FileInputStream(chooser.getSelectedFile()));
+                teacherImageView.setImage(image);
 
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     //end public methods
 }
