@@ -9,167 +9,180 @@
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #8F8F8F; -fx-border-color: #8F8F8F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <Button fx:id="moveUpButton" layoutX="103.0" layoutY="499.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveUpClicked" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: WHITE;" text="Up" textFill="#1b1616" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="499.0" />
+        <Button fx:id="moveDownButton" layoutX="103.0" layoutY="545.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveDownClicked" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: WHITE;" text="Down" textFill="#1b1616" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="545.0" />
+        <Button fx:id="moveRightButton" layoutX="235.0" layoutY="523.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveRightClicked" prefHeight="50.0" prefWidth="63.0" style="-fx-background-color: WHITE;" text="Right" textFill="#1b1616" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="606.0" AnchorPane.topAnchor="523.0" />
+        <Button fx:id="moveLeftButton" layoutX="38.0" layoutY="524.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveLeftClicked" prefHeight="50.0" prefWidth="61.0" style="-fx-background-color: WHITE;" text="Left" textFill="#1b1616" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="807.0" AnchorPane.topAnchor="524.0" />
         <Pane fx:id="imagePanel" layoutX="95.0" layoutY="353.0" prefHeight="75.0" prefWidth="98.0">
-         <children>
-            <ImageView fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@th.jpg" />
-               </image>
-            </ImageView>
-         </children></Pane>
+            <children>
+                <ImageView fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@th.jpg" />
+                    </image>
+                </ImageView>
+            </children></Pane>
+        <Pane fx:id="stationaryImagePanel" layoutX="23.0" layoutY="244.0" prefHeight="98.0" prefWidth="108.0">
+            <children>
+                <Label fx:id="rimiLabel" layoutX="29.0" layoutY="-4.0" prefHeight="37.0" prefWidth="50.0" text="RIMI" textFill="BLACK"> <font> <Font size="19.0" /> </font>
+                </Label>
+                <ImageView fitHeight="75.0" fitWidth="98.0" layoutX="5.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@th.jpg" />
+                    </image>
+                </ImageView>
+            </children></Pane>
         <Button fx:id="gatherBtn" layoutX="755.0" layoutY="544.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: #68a2f4;" text="Gather mode" textFill="WHITE" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="544.0" />
         <Button fx:id="speakBtn" layoutX="615.0" layoutY="545.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onSpeakClicked" prefHeight="37.0" prefWidth="132.0" style="-fx-background-color: RED;" text="Hold to Speak" textFill="WHITE" AnchorPane.leftAnchor="614.0" AnchorPane.rightAnchor="154.0" AnchorPane.topAnchor="544.0" />
         <Label fx:id="welcomeLabel" layoutX="6.0" prefHeight="37.0" prefWidth="249.0" text="Welcome to Walk and Talk" textFill="BLACK"> <font> <Font size="19.0" /> </font></Label>
-      <GridPane gridLinesVisible="true" layoutX="614.0" layoutY="176.0" prefHeight="360.0" prefWidth="282.0" style="-fx-background-color: Lavender;">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="32.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="214.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="10.0" textAlignment="CENTER">
-               <GridPane.margin>
-                  <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-            <CheckBox mnemonicParsing="false" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-            <CheckBox mnemonicParsing="false" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-            <CheckBox mnemonicParsing="false" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="4">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="5">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="6">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="7">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dale" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isabella" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerald" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gwen" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jolinna" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-             <Text fill="#010101" strokeType="OUTSIDE" strokeWidth="0.0" text="Rimi" textAlignment="CENTER" wrappingWidth="214.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin" textAlignment="CENTER" wrappingWidth="214.2060546875" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Connor" textAlignment="CENTER" wrappingWidth="214.2060546875" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Text>
-         </children>
-      </GridPane>
-      <ScrollPane accessibleRole="SCROLL_BAR" layoutX="309.0" layoutY="12.0" prefHeight="575.0" prefWidth="297.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="298.0">
-               <children>
-                  <TitledPane animated="false" layoutX="15.0" layoutY="15.0" text="Jolinna">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="175.0" prefWidth="255.0" />
-                    </content>
-                  </TitledPane>
-                  <TitledPane animated="false" layoutX="15.0" layoutY="185.0" prefHeight="175.0" prefWidth="256.0" text="Rimi">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="255.0" />
-                    </content>
-                  </TitledPane>
-                  <TitledPane animated="false" layoutX="15.0" layoutY="355.0" prefHeight="175.0" prefWidth="257.0" text="Kevin">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
-                    </content>
-                  </TitledPane>
-                   <TitledPane animated="false" layoutX="15.0" layoutY="525.0" prefHeight="175.0" prefWidth="257.0" text="Connor">
-                       <content>
-                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
-                       </content>
-                   </TitledPane>
-                   <TitledPane animated="false" layoutX="15.0" layoutY="695.0" prefHeight="175.0" prefWidth="257.0" text="Dale">
-                       <content>
-                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
-                       </content>
-                   </TitledPane>
-                   <TitledPane animated="false" layoutX="15.0" layoutY="865.0" prefHeight="175.0" prefWidth="257.0" text="Isabella">
-                       <content>
-                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
-                       </content>
-                   </TitledPane>
-                   <TitledPane animated="false" layoutX="15.0" layoutY="1035.0" prefHeight="175.0" prefWidth="257.0" text="Gwen">
-                       <content>
-                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
-                       </content>
-                   </TitledPane>
-                   <TitledPane animated="false" layoutX="15.0" layoutY="1205.0" prefHeight="175.0" prefWidth="257.0" text="Gerald">
-                       <content>
-                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
-                       </content>
-                   </TitledPane>
-                  <ScrollBar layoutX="283.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="17.0" />
-               </children></AnchorPane>
-        </content>
-      </ScrollPane>
-    <AnchorPane layoutX="645.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-         <children>
-            <TitledPane animated="false" layoutX="-17.0" layoutY="20.0" prefHeight="141.0" prefWidth="249.0" text="Teacher" />
-         </children>
-      </AnchorPane>
+        <GridPane gridLinesVisible="true" layoutX="614.0" layoutY="176.0" prefHeight="360.0" prefWidth="282.0" style="-fx-background-color: Lavender;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="32.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="214.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="10.0" textAlignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="7">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dale" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isabella" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerald" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gwen" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jolinna" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text fill="#010101" strokeType="OUTSIDE" strokeWidth="0.0" text="Rimi" textAlignment="CENTER" wrappingWidth="214.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin" textAlignment="CENTER" wrappingWidth="214.2060546875" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Connor" textAlignment="CENTER" wrappingWidth="214.2060546875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Text>
+            </children>
+        </GridPane>
+        <ScrollPane accessibleRole="SCROLL_BAR" layoutX="309.0" layoutY="12.0" prefHeight="575.0" prefWidth="297.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="298.0">
+                    <children>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="15.0" text="Jolinna">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="175.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="185.0" prefHeight="175.0" prefWidth="256.0" text="Rimi">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="355.0" prefHeight="175.0" prefWidth="257.0" text="Kevin">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="525.0" prefHeight="175.0" prefWidth="257.0" text="Connor">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="695.0" prefHeight="175.0" prefWidth="257.0" text="Dale">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="865.0" prefHeight="175.0" prefWidth="257.0" text="Isabella">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="1035.0" prefHeight="175.0" prefWidth="257.0" text="Gwen">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="1205.0" prefHeight="175.0" prefWidth="257.0" text="Gerald">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                            </content>
+                        </TitledPane>
+                        <ScrollBar layoutX="290.0" layoutY="141.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="17.0" />
+                    </children></AnchorPane>
+            </content>
+        </ScrollPane>
+        <AnchorPane layoutX="645.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+                <TitledPane animated="false" layoutX="-17.0" layoutY="20.0" prefHeight="141.0" prefWidth="249.0" text="Teacher" />
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>

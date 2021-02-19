@@ -99,8 +99,35 @@ public class Controller{
         {
             imagePanel.setLayoutY(variable);
         }
-        System.out.println("Y: " + imagePanel.getLayoutY());
     }
+
+    public void onMoveDownClicked() {
+        double variable = imagePanel.getLayoutY();
+        variable = variable + 10;
+        if (variable <= 403)
+        {
+            imagePanel.setLayoutY(variable);
+        }
+    }
+
+    public void onMoveRightClicked() {
+        double variable = imagePanel.getLayoutX();
+        variable = variable + 10;
+        if (variable >= 210) ;
+        {
+            imagePanel.setLayoutX(variable);
+        }
+    }
+
+    public void onMoveLeftClicked() {
+        double variable = imagePanel.getLayoutX();
+        variable = variable - 10;
+        if (variable >= 5)
+        {
+            imagePanel.setLayoutX(variable);
+        }
+    }
+
     public void onUploadImageClicked()
     {
         JFileChooser chooser = new JFileChooser();
