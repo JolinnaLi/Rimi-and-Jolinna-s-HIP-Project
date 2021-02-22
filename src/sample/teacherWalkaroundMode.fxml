@@ -14,7 +14,7 @@
         <Button fx:id="moveLeftButton" layoutX="38.0" layoutY="524.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onMoveLeftClicked" prefHeight="50.0" prefWidth="61.0" style="-fx-background-color: WHITE;" text="Left" textFill="#1b1616" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="807.0" AnchorPane.topAnchor="524.0" />
         <Pane fx:id="imagePanel" layoutX="95.0" layoutY="353.0" prefHeight="75.0" prefWidth="98.0">
             <children>
-                <ImageView fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="avatarImageView" fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@th.jpg" />
                     </image>
@@ -179,10 +179,11 @@
                     </children></AnchorPane>
             </content>
         </ScrollPane>
-        <AnchorPane layoutX="645.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-            <children>
-                <TitledPane animated="false" layoutX="-17.0" layoutY="20.0" prefHeight="141.0" prefWidth="249.0" text="Teacher" />
-            </children>
-        </AnchorPane>
+        <Button fx:id="firstUploadImageBtn" layoutX="703.0" layoutY="132.0" mnemonicParsing="false" onAction="#onFirstUploadImageClicked" text="Upload Image" />
+        <ImageView fx:id="firstTeacherImageView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@teacherimage.JPG" />
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>
