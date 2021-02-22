@@ -103,7 +103,6 @@ public class Controller{
         {
             imagePanel.setLayoutY(newY);
         }
-        System.out.println("Y: " +imagePanel.getLayoutY());
     }
 
     public void onMoveDownClicked() {
@@ -113,7 +112,6 @@ public class Controller{
         {
             imagePanel.setLayoutY(newY);
         }
-        System.out.println("Y: " +imagePanel.getLayoutY());
     }
 
     public void onMoveRightClicked() {
@@ -123,17 +121,14 @@ public class Controller{
         {
             imagePanel.setLayoutX(newX);
         }
-        System.out.println("X: " +imagePanel.getLayoutX());
     }
 
     public void onMoveLeftClicked() {
         double newX = imagePanel.getLayoutX();
         newX = newX - 10;
-        if ((newX >= 5)&&(checkAvatarLocationX(newX, imagePanel.getLayoutY())))
-        {
+        if ((newX >= 5)&&(checkAvatarLocationX(newX, imagePanel.getLayoutY()))) {
             imagePanel.setLayoutX(newX);
         }
-        System.out.println("X: " +imagePanel.getLayoutX());
     }
 
     public boolean checkAvatarLocationY(double movingLocationX, double movingLocationY)
