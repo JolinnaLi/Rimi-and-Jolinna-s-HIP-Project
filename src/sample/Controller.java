@@ -52,6 +52,10 @@ public class Controller{
     @FXML
     private Button moveLeftButton;
     @FXML
+    private Pane stationaryImagePanel;
+    @FXML
+    private Label rimiLabel;
+    @FXML
     private ImageView avatarImageView;
 
 
@@ -99,40 +103,87 @@ public class Controller{
     }
 
     public void onMoveUpClicked() {
-        double variable = imagePanel.getLayoutY();
-        variable = variable - 5;
-        if (variable >= 28)
+        double newY = imagePanel.getLayoutY();
+        newY = newY - 5;
+        if ((newY >= 28)&&(checkAvatarLocationY(imagePanel.getLayoutX(), newY)))
         {
-            imagePanel.setLayoutY(variable);
+            imagePanel.setLayoutY(newY);
         }
     }
 
     public void onMoveDownClicked() {
-        double variable = imagePanel.getLayoutY();
-        variable = variable + 10;
-        if (variable <= 403)
+        double newY = imagePanel.getLayoutY();
+        newY = newY + 10;
+        if ((newY <= 403)&&(checkAvatarLocationY(imagePanel.getLayoutX(), newY)))
         {
-            imagePanel.setLayoutY(variable);
+            imagePanel.setLayoutY(newY);
         }
     }
 
     public void onMoveRightClicked() {
-        double variable = imagePanel.getLayoutX();
-        variable = variable + 10;
-        if (variable >= 210) ;
+        double newX = imagePanel.getLayoutX();
+        newX = newX + 10;
+        if ((newX <= 220)&&(checkAvatarLocationX(newX, imagePanel.getLayoutY())))
         {
-            imagePanel.setLayoutX(variable);
+            imagePanel.setLayoutX(newX);
         }
     }
 
     public void onMoveLeftClicked() {
-        double variable = imagePanel.getLayoutX();
-        variable = variable - 10;
-        if (variable >= 5)
-        {
-            imagePanel.setLayoutX(variable);
+        double newX = imagePanel.getLayoutX();
+        newX = newX - 10;
+        if ((newX >= 5)&&(checkAvatarLocationX(newX, imagePanel.getLayoutY()))) {
+            imagePanel.setLayoutX(newX);
         }
     }
+
+    public boolean checkAvatarLocationY(double movingLocationX, double movingLocationY)
+    {
+        double stationaryLocationX = stationaryImagePanel.getLayoutX();
+        double stationaryLocationY = stationaryImagePanel.getLayoutY();
+        boolean canMoveY=false;
+        if (stationaryLocationX-movingLocationX>50)
+        {
+            canMoveY=true;
+        }
+        if (stationaryLocationX-movingLocationX<-50)
+        {
+            canMoveY=true;
+        }
+        if (stationaryLocationY-movingLocationY>50)
+        {
+            canMoveY=true;
+        }
+        if (stationaryLocationY-movingLocationY<-50)
+        {
+            canMoveY=true;
+        }
+        return canMoveY;
+    }
+
+    public boolean checkAvatarLocationX(double movingLocationX, double movingLocationY)
+    {
+        double stationaryLocationX = stationaryImagePanel.getLayoutX();
+        double stationaryLocationY = stationaryImagePanel.getLayoutY();
+        boolean canMoveX=false;
+        if (stationaryLocationX-movingLocationX>50)
+        {
+            canMoveX=true;
+        }
+        if (stationaryLocationX-movingLocationX<-50)
+        {
+            canMoveX=true;
+        }
+        if (stationaryLocationY-movingLocationY>50)
+        {
+            canMoveX=true;
+        }
+        if (stationaryLocationY-movingLocationY<-50) {
+            canMoveX = true;
+        }
+        return canMoveX;
+    }
+
 
     public void onUploadImageClicked()
     {
