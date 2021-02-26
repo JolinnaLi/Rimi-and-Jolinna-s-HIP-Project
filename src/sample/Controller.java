@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -14,10 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.FileInputStream;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-
-import javax.swing.text.Element;
 
 
 public class Controller{
@@ -42,7 +40,7 @@ public class Controller{
     @FXML
     private ImageView firstTeacherImageView;
     @FXML
-    private Pane imagePanel;
+    private Pane teacherImagePanel;
     @FXML
     private Button moveUpButton;
     @FXML
@@ -57,7 +55,8 @@ public class Controller{
     private Label rimiLabel;
     @FXML
     private ImageView avatarImageView;
-
+    @FXML
+    private CheckBox studentCheckBox;
 
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
@@ -103,85 +102,85 @@ public class Controller{
     }
 
     public void onMoveUpClicked() {
-        double newY = imagePanel.getLayoutY();
-        newY = newY - 5;
-        if ((newY >= 28)&&(checkAvatarLocationY(imagePanel.getLayoutX(), newY)))
+        double newY = teacherImagePanel.getLayoutY();
+        int step=10;
+        int upperBound=28;
+        newY = newY - step;
+        int overlapThreshold=50;
+        int checkboxThreshold=100;
+        if ((newY >= upperBound)&&(!isClose(teacherImagePanel.getLayoutX(),newY,overlapThreshold)))
         {
-            imagePanel.setLayoutY(newY);
+            teacherImagePanel.setLayoutY(newY);
         }
+        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(),checkboxThreshold);
+        studentCheckBox.setSelected(closeToStudent);
+        //studentVideo.showVideo(closeToStudent);
     }
 
     public void onMoveDownClicked() {
-        double newY = imagePanel.getLayoutY();
-        newY = newY + 10;
-        if ((newY <= 403)&&(checkAvatarLocationY(imagePanel.getLayoutX(), newY)))
+        double newY = teacherImagePanel.getLayoutY();
+        int step=10;
+        int lowerBound=403;
+        int overlapThreshold=50;
+        int checkboxThreshold=100;
+        newY = newY + step;
+        if ((newY <= lowerBound)&&(!isClose(teacherImagePanel.getLayoutX(),newY,overlapThreshold)))
         {
-            imagePanel.setLayoutY(newY);
+            teacherImagePanel.setLayoutY(newY);
         }
+        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(),checkboxThreshold);
+        studentCheckBox.setSelected(closeToStudent);
+        //studentVideo.showVideo(closeToStudent);
     }
 
     public void onMoveRightClicked() {
-        double newX = imagePanel.getLayoutX();
-        newX = newX + 10;
-        if ((newX <= 220)&&(checkAvatarLocationX(newX, imagePanel.getLayoutY())))
+        double newX = teacherImagePanel.getLayoutX();
+        int step=10;
+        int rightBound=220;
+        int overlapThreshold=50;
+        int checkboxThreshold=100;
+        newX = newX + step;
+        if ((newX <= rightBound)&&(!isClose(newX, teacherImagePanel.getLayoutY(),overlapThreshold)))
         {
-            imagePanel.setLayoutX(newX);
+            teacherImagePanel.setLayoutX(newX);
         }
+        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(),checkboxThreshold);
+        studentCheckBox.setSelected(closeToStudent);
+        //studentVideo.showVideo(closeToStudent);
     }
 
     public void onMoveLeftClicked() {
-        double newX = imagePanel.getLayoutX();
-        newX = newX - 10;
-        if ((newX >= 5)&&(checkAvatarLocationX(newX, imagePanel.getLayoutY()))) {
-            imagePanel.setLayoutX(newX);
+        double newX = teacherImagePanel.getLayoutX();
+        int step=10;
+        int leftBound=5;
+        int overlapThreshold=50;
+        int checkboxThreshold=100;
+        newX = newX - step;
+        if ((newX >= leftBound)&&(!isClose(newX, teacherImagePanel.getLayoutY(),overlapThreshold)))
+        {
+            teacherImagePanel.setLayoutX(newX);
         }
+        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(),checkboxThreshold);
+        studentCheckBox.setSelected(closeToStudent);
+        //studentVideo.showVideo(closeToStudent);
     }
 
-    public boolean checkAvatarLocationY(double movingLocationX, double movingLocationY)
+
+    public boolean isClose(double movingLocationX, double movingLocationY,int range)
     {
         double stationaryLocationX = stationaryImagePanel.getLayoutX();
         double stationaryLocationY = stationaryImagePanel.getLayoutY();
-        boolean canMoveY=false;
-        if (stationaryLocationX-movingLocationX>50)
+        boolean closeToY = false;
+        boolean closeToX = false;
+        if (Math.abs(stationaryLocationY-movingLocationY)<range)
         {
-            canMoveY=true;
+            closeToY = true;
         }
-        if (stationaryLocationX-movingLocationX<-50)
+        if (Math.abs(stationaryLocationX - movingLocationX)<range)
         {
-            canMoveY=true;
+            closeToX = true;
         }
-        if (stationaryLocationY-movingLocationY>50)
-        {
-            canMoveY=true;
-        }
-        if (stationaryLocationY-movingLocationY<-50)
-        {
-            canMoveY=true;
-        }
-        return canMoveY;
-    }
-
-    public boolean checkAvatarLocationX(double movingLocationX, double movingLocationY)
-    {
-        double stationaryLocationX = stationaryImagePanel.getLayoutX();
-        double stationaryLocationY = stationaryImagePanel.getLayoutY();
-        boolean canMoveX=false;
-        if (stationaryLocationX-movingLocationX>50)
-        {
-            canMoveX=true;
-        }
-        if (stationaryLocationX-movingLocationX<-50)
-        {
-            canMoveX=true;
-        }
-        if (stationaryLocationY-movingLocationY>50)
-        {
-            canMoveX=true;
-        }
-        if (stationaryLocationY-movingLocationY<-50) {
-            canMoveX = true;
-        }
-        return canMoveX;
+        return closeToX&&closeToY;
     }
 
 
@@ -229,4 +228,4 @@ public class Controller{
         }
     }
     //end public methods
-}
+    }
