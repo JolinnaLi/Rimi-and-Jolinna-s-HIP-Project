@@ -38,6 +38,10 @@ public class Controller{
     @FXML
     private ImageView teacherImageView;
     @FXML
+    private Button firstUploadImageBtn;
+    @FXML
+    private ImageView firstTeacherImageView;
+    @FXML
     private Pane imagePanel;
     @FXML
     private Button moveUpButton;
@@ -51,6 +55,8 @@ public class Controller{
     private Pane stationaryImagePanel;
     @FXML
     private Label rimiLabel;
+    @FXML
+    private ImageView avatarImageView;
 
 
     static Stage prevStage; //maintains which stage is being used.
@@ -194,6 +200,28 @@ public class Controller{
             try {
                 image = new Image(new FileInputStream(chooser.getSelectedFile()));
                 teacherImageView.setImage(image);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void onFirstUploadImageClicked()//Walk Around Mode
+    {
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "JPG & GIF Images", "jpg", "gif");
+        chooser.setFileFilter(filter);
+        int returnVal = chooser.showOpenDialog(null);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            System.out.println("You chose to open this file: " +
+                    chooser.getSelectedFile().getName());
+            //Creating an image
+            Image image = null;
+            try {
+                image = new Image(new FileInputStream(chooser.getSelectedFile()));
+                firstTeacherImageView.setImage(image);
+                avatarImageView.setImage(image);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
