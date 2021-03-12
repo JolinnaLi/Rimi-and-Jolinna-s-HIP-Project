@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,9 +14,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.FileInputStream;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import javax.swing.text.Element;
+import java.io.IOException;
+import java.lang.Object;
 
 import javax.swing.text.Element;
 
@@ -38,10 +44,6 @@ public class Controller{
     @FXML
     private ImageView teacherImageView;
     @FXML
-    private Button firstUploadImageBtn;
-    @FXML
-    private ImageView firstTeacherImageView;
-    @FXML
     private Pane imagePanel;
     @FXML
     private Button moveUpButton;
@@ -59,6 +61,7 @@ public class Controller{
     private ImageView avatarImageView;
 
 
+    private Image currentImage;
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
 
@@ -67,9 +70,10 @@ public class Controller{
         prevStage = stage;
     }
 
-    public void handleButtonAction()
+    public void onGatherModeClicked()
     {
         try {
+            currentImage = teacherImageView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherGatherMode.fxml"));
             Parent gatherMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -77,6 +81,10 @@ public class Controller{
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
+            if (currentImage != null)
+            {
+                teacherImageView.setImage(currentImage);
+            }
         } catch(Exception e) {
             System.out.println("Can't load new window");
             e.printStackTrace();
@@ -85,6 +93,7 @@ public class Controller{
     public void onWalkAroundClicked()
     {
         try {
+            currentImage = teacherImageView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
             Parent walkAroundMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -92,6 +101,10 @@ public class Controller{
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
+            if (currentImage != null)
+            {
+                teacherImageView.setImage(currentImage);
+            }
         } catch(Exception e) {
             System.out.println("Can't load new window");
             e.printStackTrace();
@@ -200,32 +213,19 @@ public class Controller{
             try {
                 image = new Image(new FileInputStream(chooser.getSelectedFile()));
                 teacherImageView.setImage(image);
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    public void onFirstUploadImageClicked()//Walk Around Mode
-    {
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "JPG & GIF Images", "jpg", "gif");
-        chooser.setFileFilter(filter);
-        int returnVal = chooser.showOpenDialog(null);
-        if(returnVal == JFileChooser.APPROVE_OPTION) {
-            System.out.println("You chose to open this file: " +
-                    chooser.getSelectedFile().getName());
-            //Creating an image
-            Image image = null;
-            try {
-                image = new Image(new FileInputStream(chooser.getSelectedFile()));
-                firstTeacherImageView.setImage(image);
                 avatarImageView.setImage(image);
+                BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
+                File outputImage = new File("savedImg.jpg");
+                ImageIO.write(bufferedImage, "jpg", outputImage);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
         }
     }
     //end public methods
