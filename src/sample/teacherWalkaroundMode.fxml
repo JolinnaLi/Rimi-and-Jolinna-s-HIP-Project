@@ -54,7 +54,7 @@
                         <Insets left="7.0" />
                     </GridPane.margin>
                 </CheckBox>
-                <CheckBox fx:id="studentCheckBox" mnemonicParsing="false" GridPane.rowIndex="1" >
+                <CheckBox fx:id="studentCheckBox" mnemonicParsing="false" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="7.0" />
                     </GridPane.margin>
