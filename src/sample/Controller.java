@@ -112,31 +112,27 @@ public class Controller {
     }
 
     public void onMoveUpClicked() {
-        moveUpButton.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                moveUpButton.setStyle("-fx-background-color: Grey");
-                double newY = teacherImagePanel.getLayoutY();
-                int step=10;
-                int upperBound=28;
-                newY = newY - step;
-                int overlapThreshold=50;
-                int checkboxThreshold=100;
-                if ((newY >= upperBound)&&(!isClose(teacherImagePanel.getLayoutX(),newY,overlapThreshold)))
-                {
-                    teacherImagePanel.setLayoutY(newY);
-                }
-                boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(),checkboxThreshold);
-                studentCheckBox.setSelected(closeToStudent);
-                //studentVideo.showVideo(closeToStudent);
-            }
-        });
-        moveUpButton.setOnMouseReleased(new EventHandler<MouseEvent>() {
+        double newY = teacherImagePanel.getLayoutY();
+        int step=10;
+        int upperBound=28;
+        newY = newY - step;
+        int overlapThreshold=30;
+        int checkboxThreshold=100;
+        if ((newY >= upperBound)&&(!isClose(teacherImagePanel.getLayoutX(),newY,overlapThreshold)))
+        {
+            teacherImagePanel.setLayoutY(newY);
+        }
+        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(),checkboxThreshold);
+        studentCheckBox.setSelected(closeToStudent);
+        //studentVideo.showVideo(closeToStudent);
+
+        moveUpButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 moveUpButton.setStyle("-fx-background-color: White");
             }
         });
+        moveUpButton.setStyle("-fx-background-color: Grey");
     }
 
 
