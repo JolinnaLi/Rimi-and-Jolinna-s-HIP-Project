@@ -19,11 +19,7 @@ import javax.imageio.ImageIO;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import javax.swing.text.Element;
 import java.io.IOException;
-import java.lang.Object;
-
-import javax.swing.text.Element;
 
 
 public class Controller{
@@ -42,7 +38,9 @@ public class Controller{
     @FXML
     private Button uploadImageBtn;
     @FXML
-    private ImageView teacherImageView;
+    private ImageView teacherImageGatherView;
+    @FXML
+    private ImageView teacherImageWalkAroundView;
     @FXML
     private Pane imagePanel;
     @FXML
@@ -64,6 +62,7 @@ public class Controller{
     private Image currentImage;
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
+    public static boolean isGatherMode = false;
 
     public static void setPrevStage(Stage stage)
     {
@@ -73,7 +72,7 @@ public class Controller{
     public void onGatherModeClicked()
     {
         try {
-            currentImage = teacherImageView.getImage();
+            currentImage = teacherImageWalkAroundView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherGatherMode.fxml"));
             Parent gatherMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -81,10 +80,12 @@ public class Controller{
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
+            isGatherMode = true;
             if (currentImage != null)
             {
-                teacherImageView.setImage(currentImage);
+                teacherImageGatherView.setImage(currentImage);
             }
+
         } catch(Exception e) {
             System.out.println("Can't load new window");
             e.printStackTrace();
@@ -93,7 +94,7 @@ public class Controller{
     public void onWalkAroundClicked()
     {
         try {
-            currentImage = teacherImageView.getImage();
+            currentImage = teacherImageGatherView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
             Parent walkAroundMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -101,10 +102,12 @@ public class Controller{
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
+            isGatherMode = false;
             if (currentImage != null)
             {
-                teacherImageView.setImage(currentImage);
+                teacherImageWalkAroundView.setImage(currentImage);
             }
+
         } catch(Exception e) {
             System.out.println("Can't load new window");
             e.printStackTrace();
@@ -212,10 +215,15 @@ public class Controller{
             Image image = null;
             try {
                 image = new Image(new FileInputStream(chooser.getSelectedFile()));
-                teacherImageView.setImage(image);
-                avatarImageView.setImage(image);
+                if (isGatherMode) {
+                    teacherImageGatherView.setImage(image);
+                }
+                else{
+                    teacherImageWalkAroundView.setImage(image);
+                    avatarImageView.setImage(image);
+                }
                 BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
-                File outputImage = new File("savedImg.jpg");
+                File outputImage = new File("teacherimage.JPG");
                 ImageIO.write(bufferedImage, "jpg", outputImage);
 
             } catch (FileNotFoundException e) {

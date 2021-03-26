@@ -22,7 +22,7 @@
                 </ImageView>
                 <ImageView fx:id="avatarImageView" fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@th.jpg" />
+                        <Image url="@\Users\User\Documents\HipProject\Rimi-and-Jolinna-s-HIP-Project\teacherimage.JPG" />
                     </image>
                 </ImageView>
             </children></Pane>
@@ -185,9 +185,9 @@
             </content>
         </ScrollPane>
         <Button fx:id="uploadImageBtn" layoutX="703.0" layoutY="132.0" mnemonicParsing="false" onAction="#onUploadImageClicked" text="Upload Image" />
-        <ImageView fx:id="teacherImageView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="teacherImageWalkAroundView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@teacherimage.JPG" />
+                <Image url="@\Users\User\Documents\HipProject\Rimi-and-Jolinna-s-HIP-Project\teacherimage.JPG" />
             </image>
         </ImageView>
     </children>
