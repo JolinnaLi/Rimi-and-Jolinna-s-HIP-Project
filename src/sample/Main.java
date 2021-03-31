@@ -26,6 +26,8 @@ public class Main extends Application {
             primaryStage.setResizable(false); //NOTE: You probably want to leave this as false but will need to specify proper window size for your project.
             Controller.setPrevStage(primaryStage);
             primaryStage.show();
+            Controller.isGatherMode = false;
+
         }
         catch (Exception e)
         {

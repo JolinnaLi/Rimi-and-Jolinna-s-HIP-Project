@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,8 +15,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.FileInputStream;
-
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 public class Controller{
@@ -34,11 +37,9 @@ public class Controller{
     @FXML
     private Button uploadImageBtn;
     @FXML
-    private ImageView teacherImageView;
+    private ImageView teacherImageGatherView;
     @FXML
-    private Button firstUploadImageBtn;
-    @FXML
-    private ImageView firstTeacherImageView;
+    private ImageView teacherImageWalkAroundView;
     @FXML
     private Pane teacherImagePanel;
     @FXML
@@ -58,17 +59,20 @@ public class Controller{
     @FXML
     private CheckBox studentCheckBox;
 
+    private Image currentImage;
     static Stage prevStage; //maintains which stage is being used.
     //end private declarations
+    public static boolean isGatherMode = false;
 
     public static void setPrevStage(Stage stage)
     {
         prevStage = stage;
     }
 
-    public void handleButtonAction()
+    public void onGatherModeClicked()
     {
         try {
+            currentImage = teacherImageWalkAroundView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherGatherMode.fxml"));
             Parent gatherMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -76,6 +80,12 @@ public class Controller{
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
+            isGatherMode = true;
+            if (currentImage != null)
+            {
+                teacherImageGatherView.setImage(currentImage);
+            }
+
         } catch(Exception e) {
             System.out.println("Can't load new window");
             e.printStackTrace();
@@ -84,6 +94,7 @@ public class Controller{
     public void onWalkAroundClicked()
     {
         try {
+            currentImage = teacherImageGatherView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
             Parent walkAroundMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -91,6 +102,12 @@ public class Controller{
             prevStage.close(); //close the previous stage
             setPrevStage(stage); //set current stage to previous
             stage.show();
+            isGatherMode = false;
+            if (currentImage != null)
+            {
+                teacherImageWalkAroundView.setImage(currentImage);
+            }
+
         } catch(Exception e) {
             System.out.println("Can't load new window");
             e.printStackTrace();
@@ -198,33 +215,25 @@ public class Controller{
             Image image = null;
             try {
                 image = new Image(new FileInputStream(chooser.getSelectedFile()));
-                teacherImageView.setImage(image);
+                if (isGatherMode) {
+                    teacherImageGatherView.setImage(image);
+                }
+                else{
+                    teacherImageWalkAroundView.setImage(image);
+                    avatarImageView.setImage(image);
+                }
+                BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image,null);
+                File outputImage = new File("teacherimage.JPG");
+                ImageIO.write(bufferedImage, "jpg", outputImage);
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-        }
-    }
-    public void onFirstUploadImageClicked()//Walk Around Mode
-    {
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "JPG & GIF Images", "jpg", "gif");
-        chooser.setFileFilter(filter);
-        int returnVal = chooser.showOpenDialog(null);
-        if(returnVal == JFileChooser.APPROVE_OPTION) {
-            System.out.println("You chose to open this file: " +
-                    chooser.getSelectedFile().getName());
-            //Creating an image
-            Image image = null;
-            try {
-                image = new Image(new FileInputStream(chooser.getSelectedFile()));
-                firstTeacherImageView.setImage(image);
-                avatarImageView.setImage(image);
-
-            } catch (FileNotFoundException e) {
+            catch (IOException e)
+            {
                 e.printStackTrace();
             }
+
         }
     }
     //end public methods
