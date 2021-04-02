@@ -33,30 +33,23 @@ public class Main extends Application {
             Controller controller = new Controller();
 
             walkAroundMode.setOnKeyPressed(new EventHandler<KeyEvent>() {
-                                               @Override
-                                               public void handle(KeyEvent event) {
-
-                                               }
-
-                                               public final EventHandler<KeyEvent> keyListener = new EventHandler<KeyEvent>() {
-                                                   @Override
-                                                   public void handle(KeyEvent event) {
-                                                       if (event.getCode() == KeyCode.W){
-                                                        controller.onMoveUpClicked();
-                                                       }
-                                                       else if (event.getCode() == KeyCode.S){
-                                                           controller.onMoveDownClicked();
-                                                       }
-                                                       else if (event.getCode() == KeyCode.D){
-                                                           controller.onMoveRightClicked();
-                                                       }
-                                                       else if (event.getCode() == KeyCode.A) {
-                                                           controller.onMoveLeftClicked();
-                                                       }
-                                                   }
-                                               };
-                                           }
-            );
+               @Override
+               public void handle(KeyEvent event) {
+                   if (event.getCode() == KeyCode.W){
+                       controller.onMoveUpClicked();
+                   }
+                   else if (event.getCode() == KeyCode.S){
+                       controller.onMoveDownClicked();
+                   }
+                   else if (event.getCode() == KeyCode.D){
+                       controller.onMoveRightClicked();
+                   }
+                   else if (event.getCode() == KeyCode.A) {
+                       controller.onMoveLeftClicked();
+                   }
+               }
+            }
+        );
 
         } catch (Exception e) {
             //If something fails in your program, this will print out where the error is.
