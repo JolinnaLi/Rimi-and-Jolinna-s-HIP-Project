@@ -174,9 +174,7 @@ public class Controller {
                 studentVideo.setExpanded(closeToStudent);
     }
 
-    public void onMoveRightReleased(){
-        moveRightButton.setStyle("-fx-background-color: White");
-    }
+    public void onMoveRightReleased(){ moveRightButton.setStyle("-fx-background-color: White"); }
 
     public void onMoveLeftClicked() {
         moveLeftButton.setStyle("-fx-background-color: Grey");
