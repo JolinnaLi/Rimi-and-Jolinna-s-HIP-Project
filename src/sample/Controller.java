@@ -136,10 +136,9 @@ public class Controller {
         {
            teacherImagePanel.setLayoutY(newY);
         }
-        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(),
-                teacherImagePanel.getLayoutY(),checkboxThreshold);
+        boolean closeToStudent=isClose(teacherImagePanel.getLayoutX(),teacherImagePanel.getLayoutY(),checkboxThreshold);
         studentCheckBox.setSelected(closeToStudent);
-        //studentVideo.setExpanded(closeToStudent);
+        studentVideo.setExpanded(closeToStudent);
     }
 
     public void onMoveUpReleased()
@@ -162,7 +161,7 @@ public class Controller {
         }
         boolean closeToStudent = isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         studentCheckBox.setSelected(closeToStudent);
-        //studentVideo.setExpanded(closeToStudent);
+        studentVideo.setExpanded(closeToStudent);
     }
 
     public void onMoveDownReleased()
@@ -185,7 +184,7 @@ public class Controller {
         }
         boolean closeToStudent = isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         studentCheckBox.setSelected(closeToStudent);
-        //studentVideo.setExpanded(closeToStudent);
+        studentVideo.setExpanded(closeToStudent);
     }
 
     public void onMoveRightReleased(){ moveRightButton.setStyle("-fx-background-color: White"); }
@@ -204,7 +203,7 @@ public class Controller {
         }
         boolean closeToStudent = isClose(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         studentCheckBox.setSelected(closeToStudent);
-        //studentVideo.setExpanded(closeToStudent);
+        studentVideo.setExpanded(closeToStudent);
     }
 
     public void onMoveLeftReleased(){
