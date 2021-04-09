@@ -20,6 +20,11 @@
                         <Image url="@th.jpg" />
                     </image>
                 </ImageView>
+                <ImageView fx:id="avatarImageView" fitHeight="78.0" fitWidth="109.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@\Users\User\Documents\HipProject\Rimi-and-Jolinna-s-HIP-Project\teacherimage.JPG" />
+                    </image>
+                </ImageView>
             </children></Pane>
         <Pane fx:id="stationaryImagePanel" layoutX="123.0" layoutY="186.0" prefHeight="50.0" prefWidth="50.0">
             <children>
@@ -30,7 +35,7 @@
                     </image>
                 </ImageView>
             </children></Pane>
-        <Button fx:id="gatherBtn" layoutX="755.0" layoutY="544.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: #68a2f4;" text="Gather mode" textFill="WHITE" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="544.0" />
+        <Button fx:id="gatherBtn" layoutX="755.0" layoutY="544.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGatherModeClicked" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: #68a2f4;" text="Gather mode" textFill="WHITE" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="544.0" />
         <Button fx:id="speakBtn" layoutX="615.0" layoutY="545.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onSpeakClicked" prefHeight="37.0" prefWidth="132.0" style="-fx-background-color: RED;" text="Hold to Speak" textFill="WHITE" AnchorPane.leftAnchor="614.0" AnchorPane.rightAnchor="154.0" AnchorPane.topAnchor="544.0" />
         <Label fx:id="welcomeLabel" layoutX="6.0" prefHeight="37.0" prefWidth="249.0" text="Welcome to Walk and Talk" textFill="BLACK"> <font> <Font size="19.0" /> </font></Label>
         <GridPane gridLinesVisible="true" layoutX="614.0" layoutY="176.0" prefHeight="360.0" prefWidth="282.0" style="-fx-background-color: Lavender;">
@@ -179,10 +184,10 @@
                     </children></AnchorPane>
             </content>
         </ScrollPane>
-        <Button fx:id="firstUploadImageBtn" layoutX="703.0" layoutY="132.0" mnemonicParsing="false" onAction="#onFirstUploadImageClicked" text="Upload Image" />
-        <ImageView fx:id="firstTeacherImageView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+        <Button fx:id="uploadImageBtn" layoutX="703.0" layoutY="132.0" mnemonicParsing="false" onAction="#onUploadImageClicked" text="Upload Image" />
+        <ImageView fx:id="teacherImageWalkAroundView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@teacherimage.JPG" />
+                <Image url="@\Users\User\Documents\HipProject\Rimi-and-Jolinna-s-HIP-Project\teacherimage.JPG" />
             </image>
         </ImageView>
     </children>
