@@ -56,8 +56,6 @@ public class Controller {
     @FXML
     private Pane stationaryImagePanel;
     @FXML
-    private Label rimiLabel;
-    @FXML
     private ImageView avatarImageView;
     @FXML
     private CheckBox studentCheckBox;
@@ -132,13 +130,18 @@ public class Controller {
 
     public void onMoveUpClicked()
     {
+        System.out.println("hi");
         moveUpButton.setStyle("-fx-background-color: Grey");
+        System.out.println("how");
         double newY = teacherImagePanel.getLayoutY();
+        System.out.println("are");
         int step=10;
         int upperBound=28;
         int overlapThreshold= 50;
         int checkboxThreshold=100;
+        System.out.println("you");
         newY = newY - step;
+        System.out.println("doing");
         if ((newY >= upperBound)&&(!isClose(teacherImagePanel.getLayoutX(),newY,overlapThreshold)))
         {
            teacherImagePanel.setLayoutY(newY);
@@ -155,10 +158,10 @@ public class Controller {
 
     public void onMoveDownClicked()
     {
-        moveDownButton.setStyle("-fx-background-color: Grey");
-        double newY = teacherImagePanel.getLayoutY();
+        moveDownButton.setStyle("-fx-background-color: Grey"); //problem here
+        double newY = teacherImagePanel.getLayoutY(); //and here
         int step = 10;
-        int lowerBound = 403;
+        int lowerBound = 400;
         int overlapThreshold = 50;
         int checkboxThreshold = 100;
         newY = newY + step;

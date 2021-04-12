@@ -122,12 +122,12 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="175.0" prefWidth="255.0" />
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" layoutX="15.0" layoutY="185.0" prefHeight="175.0" prefWidth="256.0" text="Rimi">
+                        <TitledPane fx:id="studentVideo" animated="false"  layoutX="15.0" layoutY="185.0" prefHeight="175.0" prefWidth="256.0" text="Student">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="255.0" />
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" layoutX="15.0" layoutY="355.0" prefHeight="175.0" prefWidth="257.0" text="Kevin">
+                        <TitledPane animated="false"  layoutX="15.0" layoutY="355.0" prefHeight="175.0" prefWidth="257.0" text="Kevin">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
                             </content>
@@ -137,22 +137,22 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" layoutX="15.0" layoutY="695.0" prefHeight="175.0" prefWidth="257.0" text="Dale">
+                        <TitledPane animated="false"  layoutX="15.0" layoutY="695.0" prefHeight="175.0" prefWidth="257.0" text="Dale">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" layoutX="15.0" layoutY="865.0" prefHeight="175.0" prefWidth="257.0" text="Isabella">
+                        <TitledPane animated="false"  layoutX="15.0" layoutY="865.0" prefHeight="175.0" prefWidth="257.0" text="Isabella">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" layoutX="15.0" layoutY="1035.0" prefHeight="175.0" prefWidth="257.0" text="Gwen">
+                        <TitledPane animated="false"  layoutX="15.0" layoutY="1035.0" prefHeight="175.0" prefWidth="257.0" text="Gwen">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" layoutX="15.0" layoutY="1205.0" prefHeight="175.0" prefWidth="257.0" text="Gerald">
+                        <TitledPane animated="false"  layoutX="15.0" layoutY="1205.0" prefHeight="175.0" prefWidth="257.0" text="Gerald">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
                             </content>
