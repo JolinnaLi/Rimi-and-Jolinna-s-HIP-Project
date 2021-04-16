@@ -14,6 +14,8 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;

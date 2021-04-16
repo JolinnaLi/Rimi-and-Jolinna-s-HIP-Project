@@ -28,6 +28,7 @@ public class Main extends Application {
             primaryStage.show();
             Controller.isGatherMode = false;
 
+
         }
         catch (Exception e)
         {
