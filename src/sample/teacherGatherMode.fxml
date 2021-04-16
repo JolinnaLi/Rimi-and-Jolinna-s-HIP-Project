@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #8F8F8F; -fx-border-color: #8F8F8F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="868.0" style="-fx-background-color: #8F8F8F; -fx-border-color: #8F8F8F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <Label layoutX="39.0" layoutY="14.0" prefWidth="145.0" text="Gather Mode">
-         <font>
-            <Font size="21.0" />
-         </font></Label>
-        <Button fx:id="walkAroundBtn" layoutX="622.0" layoutY="511.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onWalkAroundClicked" prefHeight="50.0" prefWidth="253.0" style="-fx-background-color: #68a2f4;" text="Walk Around mode" textFill="WHITE" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="511.0" />
-        <GridPane gridLinesVisible="true" layoutX="622.0" layoutY="167.0" prefHeight="332.0" prefWidth="253.0" style="-fx-background-color: Lavender;">
+        <ImageView fitHeight="600.0" fitWidth="874.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@2.png" />
+            </image></ImageView>
+        <Button fx:id="walkAroundBtn" layoutX="647.0" layoutY="519.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onWalkAroundClicked" prefHeight="50.0" prefWidth="165.0" style="-fx-background-color: BLUE;" text="Walk Around Mode" textFill="WHITE" AnchorPane.leftAnchor="647.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="519.0">
+        </Button>
+        <GridPane gridLinesVisible="true" layoutX="626.0" layoutY="194.0" prefHeight="278.0" prefWidth="205.0" style="-fx-background-color: Lavender;">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="32.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="214.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="46.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="183.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -30,92 +29,92 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
-         <children>
-             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jolinna" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-             <Text fill="#010101" strokeType="OUTSIDE" strokeWidth="0.0" text="Rimi" textAlignment="CENTER" wrappingWidth="214.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                 <font>
-                     <Font name="Arial" size="22.0" />
-                 </font>
-             </Text>
-            <CheckBox mnemonicParsing="false">
-               <GridPane.margin>
-                  <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-            <CheckBox mnemonicParsing="false" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="7.0" />
-               </GridPane.margin>
-            </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="2">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="3">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="4">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="5">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="6">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-             <CheckBox mnemonicParsing="false" GridPane.rowIndex="7">
-                 <GridPane.margin>
-                     <Insets left="7.0" />
-                 </GridPane.margin>
-             </CheckBox>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin" textAlignment="CENTER" wrappingWidth="219.13671875" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Arial" size="22.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Connor" textAlignment="CENTER" wrappingWidth="219.13671875" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Arial" size="22.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dale" textAlignment="CENTER" wrappingWidth="217.13671875" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Arial" size="22.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isabella" textAlignment="CENTER" wrappingWidth="217.13671875" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <font>
-                  <Font name="Arial" size="22.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerald" textAlignment="CENTER" wrappingWidth="220.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <font>
-                  <Font name="Arial" size="22.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gwen" textAlignment="CENTER" wrappingWidth="217.13671875" GridPane.columnIndex="1" GridPane.rowIndex="7">
-               <font>
-                  <Font name="Arial" size="22.0" />
-               </font>
-            </Text>
-         </children>
-      </GridPane>
-        <ScrollPane accessibleRole="SCROLL_BAR" layoutX="309.0" layoutY="12.0" prefHeight="575.0" prefWidth="297.0">
+            <children>
+                <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="10.0" textAlignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox fx:id="rimiCheckBox" mnemonicParsing="false" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <CheckBox mnemonicParsing="false" GridPane.rowIndex="7">
+                    <GridPane.margin>
+                        <Insets left="7.0" />
+                    </GridPane.margin>
+                </CheckBox>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dale" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isabella" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerald" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gwen" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rimi" textAlignment="CENTER" wrappingWidth="215.13671875" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text fill="#010101" strokeType="OUTSIDE" strokeWidth="0.0" text="Student" textAlignment="CENTER" wrappingWidth="214.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="Arial" size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin" textAlignment="CENTER" wrappingWidth="214.2060546875" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Connor" textAlignment="CENTER" wrappingWidth="214.2060546875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Text>
+            </children>
+        </GridPane>
+        <ScrollPane accessibleRole="SCROLL_BAR" layoutX="321.0" layoutY="15.0" prefHeight="576.0" prefWidth="253.0">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="298.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="255.0">
                     <children>
                         <TitledPane animated="false" layoutX="15.0" layoutY="15.0" text="Jolinna">
                             <content>
@@ -161,7 +160,10 @@
                     </children></AnchorPane>
             </content>
         </ScrollPane>
-      <Button fx:id="uploadImageBtn" layoutX="703.0" layoutY="132.0" mnemonicParsing="false" onAction="#onUploadImageClicked" text="Upload Image" />
+        <Button fx:id="uploadImageBtn" layoutX="784.0" layoutY="146.0" mnemonicParsing="false" onAction="#onUploadImageClicked" prefHeight="18.0" prefWidth="71.0" snapToPixel="false" text="Upload Image">
+            <font>
+                <Font size="9.0" />
+            </font></Button>
       <ImageView fx:id="teacherImageGatherView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
           <image>
               <Image url="@\Users\User\Documents\HipProject\Rimi-and-Jolinna-s-HIP-Project\teacherimage.JPG" />
