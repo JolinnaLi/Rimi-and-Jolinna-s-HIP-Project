@@ -110,6 +110,7 @@ public class Controller{
     {
         try
         {
+            currentImage = teacherImageGatherView.getImage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
             Parent walkAroundMode = (Parent) loader.load();
             Stage stage = new Stage();
@@ -324,11 +325,15 @@ public class Controller{
                     avatarImageView.setImage(image);
                 }
                 BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
-                File outputImage = new File("teacherimage.JPG");
+                File tempDirectory = new File(System.getProperty("sample"));
+                File outputImage = new File(tempDirectory.getAbsolutePath(),"teacherimage.jpg");
                 ImageIO.write(bufferedImage, "jpg", outputImage);
+                System.out.println(tempDirectory.getAbsolutePath());
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+
         }
     }
     //end public methods
