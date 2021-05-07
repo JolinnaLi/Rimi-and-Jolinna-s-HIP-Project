@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +10,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -22,7 +25,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import javafx.scene.text.Text;
 
 public class Controller{
 
@@ -40,35 +43,47 @@ public class Controller{
     @FXML
     private Button uploadImageBtn;
     @FXML
-    private ImageView teacherImageGatherView;
+    private ImageView teacherImageGatherView = new ImageView();
     @FXML
-    private ImageView teacherImageWalkAroundView;
+    private ImageView teacherImageWalkAroundView = new ImageView();
     @FXML
-    private Pane teacherImagePanel;
+    private Pane teacherImagePanel = new Pane();
     @FXML
-    private Button moveUpButton;
+    private Button moveUpButton = new Button();
     @FXML
-    private Button moveDownButton;
+    private Button moveDownButton = new Button();
     @FXML
-    private Button moveRightButton;
+    private Button moveRightButton = new Button();
     @FXML
-    private Button moveLeftButton;
+    private Button moveLeftButton = new Button();
     @FXML
     private ImageView avatarImageView;
     @FXML
     private Button button;
     @FXML
-    private Pane stationaryPanelRimi;
+    private Pane stationaryPanelRimi = new Pane();
     @FXML
-    private CheckBox rimiCheckBox;
+    private CheckBox rimiCheckBox = new CheckBox();
     @FXML
-    private TitledPane rimiVideo;
+    private TitledPane rimiVideo = new TitledPane();
     @FXML
-    private Pane stationaryPanelJolinna;
+    private Pane stationaryPanelJolinna = new Pane();
     @FXML
-    private CheckBox jolinnaCheckBox;
+    private CheckBox jolinnaCheckBox = new CheckBox();
     @FXML
-    private TitledPane jolinnaVideo;
+    private TitledPane jolinnaVideo = new TitledPane();
+    @FXML
+    private Pane stationaryPanelKevin = new Pane();
+    @FXML
+    private CheckBox kevinCheckBox = new CheckBox();
+    @FXML
+    private TitledPane kevinVideo = new TitledPane();
+    @FXML
+    private Pane stationaryPanelConnor = new Pane();
+    @FXML
+    private CheckBox connorCheckBox = new CheckBox();
+    @FXML
+    private TitledPane connorVideo = new TitledPane();
 
     private Image currentImage;
     static Stage prevStage; //maintains which stage is being used.
@@ -81,6 +96,41 @@ public class Controller{
     {
         prevStage = stage;
     }
+
+    public void startProgram(Stage primaryStage)
+    {
+        try {
+            //load main screen
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
+            Scene walkAroundMode = new Scene(loader.load());
+            primaryStage.setScene(walkAroundMode);
+            primaryStage.setTitle("Teacher Mode");
+            primaryStage.setResizable(false); //NOTE: You probably want to leave this as false but will need to specify proper window size for your project.
+            setPrevStage(primaryStage);
+            primaryStage.show();
+            primaryStage.setAlwaysOnTop(true);
+            primaryStage.requestFocus();
+            isGatherMode = false;
+
+            walkAroundMode.setOnKeyPressed(event -> {
+                        if (event.getCode() == KeyCode.W) {
+                            onMoveUpClicked();
+                        } else if (event.getCode() == KeyCode.S) {
+                            onMoveDownClicked();
+                        } else if (event.getCode() == KeyCode.D) {
+                            onMoveRightClicked();
+                        } else if (event.getCode() == KeyCode.A) {
+                            onMoveLeftClicked();
+                        }
+                    }
+            );
+
+        } catch (Exception e) {
+            //If something fails in your program, this will print out where the error is.
+            e.printStackTrace();
+        }
+    }
+
 
     public void onGatherModeClicked()
     {
@@ -140,6 +190,7 @@ public class Controller{
         moveUpButton.setStyle("-fx-background-color: Grey");
         System.out.println("how");
         double newY = teacherImagePanel.getLayoutY();
+        System.out.println(newY);
         System.out.println("are");
         int step=10;
         int upperBound=28;
@@ -148,14 +199,20 @@ public class Controller{
         System.out.println("you");
         newY = newY - step;
         System.out.println("doing");
-        if ((newY >= upperBound)&&(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
-        {
+        System.out.println((newY >= upperBound));
+        System.out.println(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold));
+        System.out.println(!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold));
+        if ((newY >= upperBound)&&(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseConnor(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
+        {System.out.println("new");
             teacherImagePanel.setLayoutY(newY);
+            System.out.println("code");
         }
         System.out.println("I");
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         System.out.println("am");
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         System.out.println("fine");
         rimiCheckBox.setSelected(closeToRimi);
         System.out.println("today");
@@ -163,7 +220,11 @@ public class Controller{
         System.out.println("I guess");
         rimiVideo.setExpanded(closeToRimi);
         System.out.println("wbu");
-        jolinnaVideo.setExpanded(closeToJolinna);
+        jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        kevinVideo.setExpanded(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
+        connorVideo.setExpanded(closeToConnor);
     }
 
     public void onMoveUpReleased()
@@ -180,16 +241,22 @@ public class Controller{
         int overlapThreshold = 50;
         int checkboxThreshold = 80;
         newY = newY + step;
-        if ((newY <= lowerBound) && (!isCloseRimi(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
+        if ((newY <= lowerBound) && (!isCloseRimi(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseKevin(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseConnor(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
         {
             teacherImagePanel.setLayoutY(newY);
         }
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         rimiCheckBox.setSelected(closeToRimi);
         jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
         rimiVideo.setExpanded(closeToRimi);
         jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
     }
 
     public void onMoveDownReleased()
@@ -206,16 +273,22 @@ public class Controller{
         int overlapThreshold = 50;
         int checkboxThreshold = 80;
         newX = newX + step;
-        if ((newX <= rightBound) && (!isCloseRimi(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseJolinna(newX, teacherImagePanel.getLayoutY(), overlapThreshold)))
+        if ((newX <= rightBound) && (!isCloseRimi(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseJolinna(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseKevin(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseConnor(newX, teacherImagePanel.getLayoutY(), overlapThreshold)))
         {
             teacherImagePanel.setLayoutX(newX);
         }
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         rimiCheckBox.setSelected(closeToRimi);
         jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
         rimiVideo.setExpanded(closeToRimi);
         jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
     }
 
     public void onMoveRightReleased(){ moveRightButton.setStyle("-fx-background-color: White"); }
@@ -228,16 +301,22 @@ public class Controller{
         int overlapThreshold = 50;
         int checkboxThreshold = 80;
         newX = newX - step;
-        if ((newX >= leftBound) && (!isCloseRimi(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseJolinna(newX, teacherImagePanel.getLayoutY(), overlapThreshold)))
+        if ((newX >= leftBound) && (!isCloseRimi(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseJolinna(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) &&(!isCloseKevin(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseConnor(newX, teacherImagePanel.getLayoutY(), overlapThreshold)))
         {
             teacherImagePanel.setLayoutX(newX);
         }
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         rimiCheckBox.setSelected(closeToRimi);
         jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
         rimiVideo.setExpanded(closeToRimi);
         jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
     }
 
     public void onMoveLeftReleased(){
@@ -278,6 +357,40 @@ public class Controller{
         return closeToX&&closeToY;
     }
 
+    public boolean isCloseKevin(double movingLocationX, double movingLocationY, int range)
+    {
+        double stationaryLocationX = stationaryPanelKevin.getLayoutX();
+        double stationaryLocationY = stationaryPanelKevin.getLayoutY();
+        boolean closeToY = false;
+        boolean closeToX = false;
+        if (Math.abs(stationaryLocationY-movingLocationY)<range)
+        {
+            closeToY = true;
+        }
+        if (Math.abs(stationaryLocationX - movingLocationX)<range)
+        {
+            closeToX = true;
+        }
+        return closeToX&&closeToY;
+    }
+
+    public boolean isCloseConnor(double movingLocationX, double movingLocationY, int range)
+    {
+        double stationaryLocationX = stationaryPanelConnor.getLayoutX();
+        double stationaryLocationY = stationaryPanelConnor.getLayoutY();
+        boolean closeToY = false;
+        boolean closeToX = false;
+        if (Math.abs(stationaryLocationY-movingLocationY)<range)
+        {
+            closeToY = true;
+        }
+        if (Math.abs(stationaryLocationX - movingLocationX)<range)
+        {
+            closeToX = true;
+        }
+        return closeToX&&closeToY;
+    }
+
     public void onRimiChecked()
     {
         int checkboxThreshold = 80;
@@ -285,10 +398,16 @@ public class Controller{
         teacherImagePanel.setLayoutY(186);
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         rimiCheckBox.setSelected(closeToRimi);
         jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
         rimiVideo.setExpanded(closeToRimi);
         jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
     }
 
     public void onJolinnaChecked()
@@ -298,11 +417,56 @@ public class Controller{
         teacherImagePanel.setLayoutY(323);
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         rimiCheckBox.setSelected(closeToRimi);
         jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
         rimiVideo.setExpanded(closeToRimi);
         jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
     }
+
+    public void onKevinChecked()
+    {
+        int checkboxThreshold = 80;
+        teacherImagePanel.setLayoutX(89);
+        teacherImagePanel.setLayoutY(299);
+        boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        rimiCheckBox.setSelected(closeToRimi);
+        jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
+        rimiVideo.setExpanded(closeToRimi);
+        jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
+    }
+
+    public void onConnorChecked()
+    {
+        int checkboxThreshold = 80;
+        teacherImagePanel.setLayoutX(235);
+        teacherImagePanel.setLayoutY(120);
+        boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
+        rimiCheckBox.setSelected(closeToRimi);
+        jolinnaCheckBox.setSelected(closeToJolinna);
+        kevinCheckBox.setSelected(closeToKevin);
+        connorCheckBox.setSelected(closeToConnor);
+        rimiVideo.setExpanded(closeToRimi);
+        jolinnaVideo.setExpanded(closeToJolinna);
+        kevinVideo.setExpanded(closeToKevin);
+        connorVideo.setExpanded(closeToConnor);
+    }
+
 
     public void onUploadImageClicked() throws IOException {
         JFileChooser chooser = new JFileChooser();

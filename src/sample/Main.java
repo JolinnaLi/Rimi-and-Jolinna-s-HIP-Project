@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-
+import javafx.util.Callback;
 
 
 public class Main extends Application {
@@ -16,8 +16,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        try {
+        Controller controller = new Controller();
+        controller.startProgram(primaryStage);
+        /*try {
             //load main screen
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
             Scene walkAroundMode = new Scene(loader.load());
@@ -30,8 +31,7 @@ public class Main extends Application {
             primaryStage.requestFocus();
             Controller.isGatherMode = false;
 
-
-            Controller controller = new Controller();
+            Controller = new Controller();
 
             walkAroundMode.setOnKeyPressed(event -> {
                         if (event.getCode() == KeyCode.W){
@@ -49,10 +49,15 @@ public class Main extends Application {
                     }
             );
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             //If something fails in your program, this will print out where the error is.
             e.printStackTrace();
         }
 
+
+    }
+         */
     }
 }

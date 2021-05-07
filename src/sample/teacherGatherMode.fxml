@@ -160,13 +160,13 @@
                     </children></AnchorPane>
             </content>
         </ScrollPane>
-        <Button fx:id="uploadImageBtn" layoutX="784.0" layoutY="146.0" mnemonicParsing="false" onAction="#onUploadImageClicked" prefHeight="18.0" prefWidth="71.0" snapToPixel="false" text="Upload Image">
+        <Button fx:id="uploadImageBtn" layoutX="783.0" layoutY="142.0" mnemonicParsing="false" onAction="#onUploadImageClicked" prefHeight="18.0" prefWidth="71.0" snapToPixel="false" text="Upload Image">
             <font>
                 <Font size="9.0" />
             </font></Button>
       <ImageView fx:id="teacherImageGatherView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
           <image>
-              <Image url="@\Users\User\Documents\HipProject\Rimi-and-Jolinna-s-HIP-Project\teacherimage.JPG" />
+              <Image url="@teacherimage.JPG" />
           </image>
       </ImageView>
     </children>
