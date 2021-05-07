@@ -118,42 +118,105 @@
                     <children>
                         <TitledPane animated="false" layoutX="15.0" layoutY="15.0" text="Jolinna">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="175.0" prefWidth="255.0"/>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="104.0" prefWidth="213.0">
+                                    <children>
+                                        <ImageView fitHeight="146.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" AnchorPane.rightAnchor="4.0">
+                                            <image>
+                                                <Image url="@IMG_2838.jpg" />
+                                            </image>
+                                        </ImageView>
+                                    </children></AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="185.0" prefHeight="175.0" prefWidth="256.0" text="Rimi">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="112.0" fitWidth="190.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@rimivid.JPG" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="355.0" prefHeight="175.0" prefWidth="257.0" text="Kevin">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="118.0" fitWidth="188.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@kevinvid.JPG" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="525.0" prefHeight="175.0" prefWidth="257.0" text="Connor">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@connorvid.JPG" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="695.0" prefHeight="175.0" prefWidth="257.0" text="Dale">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="118.0" fitWidth="188.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@brittanyvid.JPG" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="865.0" prefHeight="175.0" prefWidth="257.0" text="Isabella">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="150.0" fitWidth="188.0" layoutX="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@surprisevid.jpg" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="1035.0" prefHeight="175.0" prefWidth="257.0" text="Gwen">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@gwenvid.jpg" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <TitledPane animated="false" layoutX="15.0" layoutY="1205.0" prefHeight="175.0" prefWidth="257.0" text="Gerald">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="255.0">
+                                    <children>
+                                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Hercules.jpg" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
                             </content>
                         </TitledPane>
                         <ScrollBar layoutX="283.0" layoutY="4.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="17.0" />
