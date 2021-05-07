@@ -23,7 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Rimi-and-Jolinna-s-HIP-Project/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Rimi-and-Jolinna-s-HIP-Project/sample/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/teacherGatherMode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/teacherGatherMode.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/teacherWalkaroundMode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/teacherWalkaroundMode.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teacherimage.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/teacherimage.JPG" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +75,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -111,6 +112,11 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="sample" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
