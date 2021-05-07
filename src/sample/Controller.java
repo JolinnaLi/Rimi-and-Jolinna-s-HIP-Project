@@ -186,41 +186,25 @@ public class Controller{
 
     public void onMoveUpClicked()
     {
-        System.out.println("hi");
         moveUpButton.setStyle("-fx-background-color: Grey");
-        System.out.println("how");
         double newY = teacherImagePanel.getLayoutY();
-        System.out.println(newY);
-        System.out.println("are");
         int step=10;
         int upperBound=28;
         int overlapThreshold= 40;
         int checkboxThreshold=80;
-        System.out.println("you");
         newY = newY - step;
-        System.out.println("doing");
-        System.out.println((newY >= upperBound));
-        System.out.println(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold));
-        System.out.println(!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold));
-        if ((newY >= upperBound)&&(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseConnor(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
-        {System.out.println("new");
+        if ((newY >= upperBound)&&(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold)) && (!isCloseKevin(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseConnor(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
+        {
             teacherImagePanel.setLayoutY(newY);
-            System.out.println("code");
         }
-        System.out.println("I");
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
-        System.out.println("am");
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToKevin = isCloseKevin(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToConnor = isCloseConnor(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
-        System.out.println("fine");
         rimiCheckBox.setSelected(closeToRimi);
-        System.out.println("today");
-        jolinnaCheckBox.setSelected(closeToJolinna);
-        System.out.println("I guess");
         rimiVideo.setExpanded(closeToRimi);
-        System.out.println("wbu");
         jolinnaCheckBox.setSelected(closeToJolinna);
+        jolinnaVideo.setExpanded(closeToJolinna);
         kevinCheckBox.setSelected(closeToKevin);
         kevinVideo.setExpanded(closeToKevin);
         connorCheckBox.setSelected(closeToConnor);

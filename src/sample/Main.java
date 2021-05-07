@@ -27,10 +27,9 @@ public class Main extends Application {
             primaryStage.setResizable(false); //NOTE: You probably want to leave this as false but will need to specify proper window size for your project.
             Controller.setPrevStage(primaryStage);
             primaryStage.show();
-            primaryStage.setAlwaysOnTop(true);
-            primaryStage.requestFocus();
             Controller.isGatherMode = false;
 
+<<<<<<< HEAD
             Controller = new Controller();
 
             walkAroundMode.setOnKeyPressed(event -> {
@@ -49,6 +48,28 @@ public class Main extends Application {
                     }
             );
 
+=======
+            Controller controller = new Controller();
+
+            walkAroundMode.setOnKeyPressed(event -> {
+              if (event.getCode() == KeyCode.W)
+              {
+                controller.onMoveUpClicked();
+              }
+              else if (event.getCode() == KeyCode.S)
+              {
+                controller.onMoveDownClicked();
+              }
+              else if (event.getCode() == KeyCode.D)
+              {
+                controller.onMoveRightClicked();
+              }
+              else if (event.getCode() == KeyCode.A)
+              {
+                controller.onMoveLeftClicked();
+              }
+            });
+>>>>>>> ce233795b603ba060bf3cb559c700be7cf364744
         }
         catch (Exception e)
         {
