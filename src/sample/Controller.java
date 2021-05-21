@@ -11,6 +11,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.beans.EventHandler;
 import java.io.File;
 import java.io.FileInputStream;
 import java.awt.image.BufferedImage;
@@ -84,6 +86,8 @@ public class Controller{
     private CheckBox connorCheckBox = new CheckBox();
     @FXML
     private TitledPane connorVideo = new TitledPane();
+    @FXML
+    private Pane micPane = new Pane();
 
     private Image currentImage;
     static Stage prevStage; //maintains which stage is being used.
@@ -179,9 +183,13 @@ public class Controller{
         }
     }
 
-    public void onSpeakClicked()
+    public void onSpeakClicked() {
+        micPane.setVisible(true);
+    }
+
+    public void onSpeakReleased()
     {
-        System.out.println("Speaking");
+        micPane.setVisible(false);
     }
 
     public void onMoveUpClicked()
