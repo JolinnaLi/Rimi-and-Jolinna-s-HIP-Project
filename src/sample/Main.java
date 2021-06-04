@@ -3,10 +3,7 @@ package sample;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-
 
 public class Main extends Application {
 
@@ -17,8 +14,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Controller controller = new Controller();
-        controller.startProgram(primaryStage);
-        /*try {
+        try
+        {
             //load main screen
             FXMLLoader loader = new FXMLLoader(getClass().getResource("teacherWalkAroundMode.fxml"));
             Scene walkAroundMode = new Scene(loader.load());
@@ -28,48 +25,6 @@ public class Main extends Application {
             Controller.setPrevStage(primaryStage);
             primaryStage.show();
             Controller.isGatherMode = false;
-
-<<<<<<< HEAD
-            Controller = new Controller();
-
-            walkAroundMode.setOnKeyPressed(event -> {
-                        if (event.getCode() == KeyCode.W){
-                            controller.onMoveUpClicked();
-                        }
-                        else if (event.getCode() == KeyCode.S){
-                            controller.onMoveDownClicked();
-                        }
-                        else if (event.getCode() == KeyCode.D){
-                            controller.onMoveRightClicked();
-                        }
-                        else if (event.getCode() == KeyCode.A) {
-                            controller.onMoveLeftClicked();
-                        }
-                    }
-            );
-
-=======
-            Controller controller = new Controller();
-
-            walkAroundMode.setOnKeyPressed(event -> {
-              if (event.getCode() == KeyCode.W)
-              {
-                controller.onMoveUpClicked();
-              }
-              else if (event.getCode() == KeyCode.S)
-              {
-                controller.onMoveDownClicked();
-              }
-              else if (event.getCode() == KeyCode.D)
-              {
-                controller.onMoveRightClicked();
-              }
-              else if (event.getCode() == KeyCode.A)
-              {
-                controller.onMoveLeftClicked();
-              }
-            });
->>>>>>> ce233795b603ba060bf3cb559c700be7cf364744
         }
         catch (Exception e)
         {
@@ -78,7 +33,5 @@ public class Main extends Application {
         }
 
 
-    }
-         */
     }
 }

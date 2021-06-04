@@ -10,7 +10,7 @@
     <children>
         <ImageView fitHeight="600.0" fitWidth="874.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@2.png" />
+                <Image url="@images/2.png" />
             </image></ImageView>
         <Button fx:id="walkAroundBtn" layoutX="647.0" layoutY="519.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onWalkAroundClicked" prefHeight="50.0" prefWidth="165.0" style="-fx-background-color: BLUE;" text="Walk Around Mode" textFill="WHITE" AnchorPane.leftAnchor="647.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="519.0">
         </Button>
@@ -122,7 +122,7 @@
                                     <children>
                                         <ImageView fitHeight="146.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" AnchorPane.rightAnchor="4.0">
                                             <image>
-                                                <Image url="@IMG_2838.jpg" />
+                                                <Image url="@images/IMG_2838.jpg" />
                                             </image>
                                         </ImageView>
                                     </children></AnchorPane>
@@ -134,7 +134,7 @@
                                     <children>
                                         <ImageView fitHeight="112.0" fitWidth="190.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@rimivid.JPG" />
+                                                <Image url="@images/rimivid.JPG" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -147,7 +147,7 @@
                                     <children>
                                         <ImageView fitHeight="118.0" fitWidth="188.0" layoutX="12.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@kevinvid.JPG" />
+                                                <Image url="@images/kevinvid.JPG" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -160,7 +160,7 @@
                                     <children>
                                         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@connorvid.JPG" />
+                                                <Image url="@images/connorvid.JPG" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -173,7 +173,7 @@
                                     <children>
                                         <ImageView fitHeight="118.0" fitWidth="188.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@brittanyvid.JPG" />
+                                                <Image url="@images/brittanyvid.JPG" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -186,7 +186,7 @@
                                     <children>
                                         <ImageView fitHeight="150.0" fitWidth="188.0" layoutX="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@surprisevid.jpg" />
+                                                <Image url="@images/surprisevid.jpg" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -199,7 +199,7 @@
                                     <children>
                                         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@gwenvid.jpg" />
+                                                <Image url="@images/gwenvid.jpg" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -212,7 +212,7 @@
                                     <children>
                                         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@Hercules.jpg" />
+                                                <Image url="@images/Hercules.jpg" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -229,7 +229,7 @@
             </font></Button>
       <ImageView fx:id="teacherImageGatherView" fitHeight="108.0" fitWidth="184.0" layoutX="658.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
           <image>
-              <Image url="@teacherimage.JPG" />
+              <Image url="@images/teacherimage.JPG" />
           </image>
       </ImageView>
     </children>
