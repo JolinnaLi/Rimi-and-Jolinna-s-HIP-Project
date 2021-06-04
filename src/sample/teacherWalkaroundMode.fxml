@@ -62,7 +62,7 @@
                 </ImageView>
             </children></Pane>
         <Button fx:id="gatherBtn" layoutX="732.0" layoutY="520.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGatherModeClicked" prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: #68a2f4;" text="Gather mode" textFill="WHITE" AnchorPane.leftAnchor="732.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="520.0" />
-        <Button fx:id="speakBtn" layoutX="606.0" layoutY="520.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onSpeakClicked" prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: RED;" text="Hold to Speak" textFill="WHITE" AnchorPane.leftAnchor="605.0" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="519.0">
+        <Button fx:id="speakBtn" layoutX="606.0" layoutY="520.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#onSpeakClicked" onMouseReleased="#onSpeakReleased"  prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: RED;" text="Hold to Speak" textFill="WHITE" AnchorPane.leftAnchor="605.0" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="519.0">
             <font>
                 <Font size="12.0" />
             </font></Button>
@@ -284,5 +284,13 @@
                 <Image url="@images/teacherimage.JPG" />
             </image>
         </ImageView>
+        <Pane fx:id="micPane" layoutX="677.0" layoutY="25.0" prefHeight="71.0" prefWidth="71.0" visible="false">
+            <children>
+                <ImageView fitHeight="108.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@micimage-removebg-preview.png" />
+                    </image>
+                </ImageView>
+            </children></Pane>
     </children>
 </AnchorPane>
