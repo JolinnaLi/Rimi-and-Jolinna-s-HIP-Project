@@ -11,6 +11,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.beans.EventHandler;
 import java.io.File;
 import java.io.FileInputStream;
 import java.awt.image.BufferedImage;
@@ -84,6 +86,8 @@ public class Controller{
     private CheckBox connorCheckBox = new CheckBox();
     @FXML
     private TitledPane connorVideo = new TitledPane();
+    @FXML
+    private Pane micPane = new Pane();
 
     private Image currentImage;
     static Stage prevStage; //maintains which stage is being used.
@@ -179,9 +183,13 @@ public class Controller{
         }
     }
 
-    public void onSpeakClicked()
+    public void onSpeakClicked() {
+        micPane.setVisible(true);
+    }
+
+    public void onSpeakReleased()
     {
-        System.out.println("Speaking");
+        micPane.setVisible(false);
     }
 
     public void onMoveUpClicked()
@@ -191,7 +199,7 @@ public class Controller{
         int step=10;
         int upperBound=28;
         int overlapThreshold= 40;
-        int checkboxThreshold=80;
+        int checkboxThreshold=100;
         newY = newY - step;
         if ((newY >= upperBound)&&(!isCloseRimi(teacherImagePanel.getLayoutX(),newY,overlapThreshold)) && (!isCloseKevin(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseConnor(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
         {
@@ -223,7 +231,7 @@ public class Controller{
         int step = 10;
         int lowerBound = 400;
         int overlapThreshold = 50;
-        int checkboxThreshold = 80;
+        int checkboxThreshold = 100;
         newY = newY + step;
         if ((newY <= lowerBound) && (!isCloseRimi(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseJolinna(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseKevin(teacherImagePanel.getLayoutX(), newY, overlapThreshold)) && (!isCloseConnor(teacherImagePanel.getLayoutX(), newY, overlapThreshold)))
         {
@@ -255,7 +263,7 @@ public class Controller{
         int step = 10;
         int rightBound = 220;
         int overlapThreshold = 50;
-        int checkboxThreshold = 80;
+        int checkboxThreshold = 100;
         newX = newX + step;
         if ((newX <= rightBound) && (!isCloseRimi(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseJolinna(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseKevin(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseConnor(newX, teacherImagePanel.getLayoutY(), overlapThreshold)))
         {
@@ -283,7 +291,7 @@ public class Controller{
         int step = 10;
         int leftBound = 5;
         int overlapThreshold = 50;
-        int checkboxThreshold = 80;
+        int checkboxThreshold = 100;
         newX = newX - step;
         if ((newX >= leftBound) && (!isCloseRimi(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseJolinna(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) &&(!isCloseKevin(newX, teacherImagePanel.getLayoutY(), overlapThreshold)) && (!isCloseConnor(newX, teacherImagePanel.getLayoutY(), overlapThreshold)))
         {
@@ -435,7 +443,7 @@ public class Controller{
     public void onConnorChecked()
     {
         int checkboxThreshold = 80;
-        teacherImagePanel.setLayoutX(235);
+        teacherImagePanel.setLayoutX(210);
         teacherImagePanel.setLayoutY(120);
         boolean closeToRimi = isCloseRimi(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
         boolean closeToJolinna = isCloseJolinna(teacherImagePanel.getLayoutX(), teacherImagePanel.getLayoutY(), checkboxThreshold);
